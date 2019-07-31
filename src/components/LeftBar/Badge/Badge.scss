@@ -1,0 +1,17 @@
+.badge{
+  display: flex;
+}
+
+.badge__image{
+  width: 10px;
+  height: 10px;
+  position: relative;
+  top: 2px;
+}
+
+.badge__name{
+  color: #363636;
+  opacity: 0.5;
+  margin-left: 5px;
+  font-size: 13px;
+}

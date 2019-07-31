@@ -1,0 +1,19 @@
+.leftbar,
+.leftbar-open{
+  background: black;
+  display: flex;
+  align-content: space-between;
+  flex-flow: row wrap;
+  height: 100vh;
+  transition: 0.15s ease-in-out;
+}
+
+.leftbar{
+  min-width: 60px;
+  width: 60px;
+}
+
+.leftbar-open{
+  width: 230px;
+  min-width: 230px;
+}
