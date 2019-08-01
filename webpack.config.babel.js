@@ -209,8 +209,6 @@ const config = {
       modules: [].concat(src, ["node_modules"]),
       alias: {
         "react-dom": "@hot-loader/react-dom",
-        src: path.resolve('./src'),
-      assets:  path.resolve('./dist/assets')
       }
     }
   },

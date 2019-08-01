@@ -1,17 +1,21 @@
 .badge{
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  overflow: hidden;
 }
 
 .badge__image{
-  width: 10px;
-  height: 10px;
-  position: relative;
-  top: 2px;
+  width: 80px;
+  background-color: #FD7360;
+  height: 80px;
+  border-radius: 50%; 
 }
 
 .badge__name{
-  color: #363636;
-  opacity: 0.5;
-  margin-left: 5px;
-  font-size: 13px;
-}
+  color: #ffffff;
+  margin-top: 10px;
+  opacity: 1s;
+  font-size: 19px;
+} 

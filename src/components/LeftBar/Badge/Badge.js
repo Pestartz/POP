@@ -7,10 +7,11 @@ class Badge extends Component {
   }
 
   render() {
+    const d='http://wallpapersfan.ru/wp-content/uploads/2016/11/besplatnye-oboi-hd-zheleznyj-chelovek-760x475.jpg';
     return (
-      <div className="badge">
-        <img className="badge__image" src={currentBadge} alt="" />
-        <div className="badge__name"> {this.props.name} </div>
+      <div className={styles.badge}>
+        <div className={styles.badge__image}  alt="" />
+        <div className={styles.badge__name}> Mister Di </div>
       </div>
     );
   }
