@@ -3,9 +3,9 @@ import Badge from "./Badge/Badge";
 import Search from "./Search/Search";
 import Playlist from "./Playlist/Playlist";
 import Chart from "./Charts/Chart";
-import styles from "./Leftbar.scss";
+import styles from "./LeftBar.scss";
 
-class Leftbar extends Component {
+class LeftBar extends Component {
   constructor(props) {
     super(props);
   }
@@ -24,4 +24,4 @@ class Leftbar extends Component {
   }
 }
 
-export default Leftbar;
+export default LeftBar;

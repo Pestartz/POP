@@ -1,42 +1,12 @@
 {
-  "name": "electron-react-ant-boilerplate",
-  "version": "1.0.9",
-  "description": "Electron, Webpack4, React, Babel 7, ES6, PostCSS, Sass, Ant Design",
+  "name": "POP",
+  "version": "1.0.1",
+  "description": "A little client-server app for listening music",
   "license": "MIT",
   "private": false,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kevoj/electron-react-ant-boilerplate.git"
-  },
   "author": {
-    "name": "leonardo R",
-    "email": "leonardo.ricog@gmail.com",
-    "url": "https://github.com/kevoj"
+    "name": "Pestartz"
   },
-  "keywords": [
-    "react",
-    "electron",
-    "boilerplate",
-    "webpack",
-    "react-electron",
-    "react-electron-webpack",
-    "electron-boilerplate",
-    "react-boilerplate",
-    "react-ant-boilerplate",
-    "react-ant",
-    "ant-boilerplate",
-    "ant-design",
-    "react-ant-design",
-    "react-ant-design-boilerplate",
-    "react-webpack",
-    "ant-webpack",
-    "react-babel",
-    "webpack",
-    "es6",
-    "babel-7",
-    "less",
-    "sass"
-  ],
   "engines": {
     "node": ">=8.0.0",
     "npm": ">=5.0.0",

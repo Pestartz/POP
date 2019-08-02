@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Home.scss";
-import Left from "../../components/LeftBar/Leftbar";
+import LeftBar from "../../components/LeftBar/LeftBar";
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +9,7 @@ class Home extends Component {
   render() {
     return (
         <div className={styles.home}>
-          <Left/>
+          <LeftBar/>
         </div>
     );
   }

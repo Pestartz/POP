@@ -10,8 +10,8 @@ class Search extends Component {
     let text = "Search";
     let searchIcon = require("assets/images/pe.svg");
     return (
-      <div className={styles.search}>
-        <div className={styles.search__wrapper}>
+      <div className={styles.search__wrapper}>
+        <div className={styles.search}>
           <img src={searchIcon} height="22px" width="22px"/>    
           <div className={styles.search__text}>{text}</div>
         </div>
