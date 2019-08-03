@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import CardMusicPic from "./CardMusicPic/CardMusicPic";
-import CardMusicText from "./CardMusicText/CardMusicText";
 import styles from "./CardMusic.scss";
 
 class CardMusic extends Component {
@@ -11,8 +9,12 @@ class CardMusic extends Component {
   render() {
     return (
       <div className={styles.cardMusic}>
-        <CardMusicPic/>
-        <CardMusicText/>
+        <div className={styles.cardMusic__pic}></div>
+        <div className={styles.cardMusic__text}>
+          <div className={styles.cardMusic__text__name}>Sakura</div>
+          <div className={styles.cardMusic__text__author}>Lokddddd</div>
+        </div>
+        <div className={styles.cardMusic__time}>3:12</div>
       </div>
     );
   }

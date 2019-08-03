@@ -13,10 +13,14 @@ class PlaylistScreen extends Component {
     return (
       <div className={styles.playlistScreen}>   
         <SearchMusic/>
-        {/* <div className={styles.playlistScreen__content}>
-          {NOMUSIC}
-        </div> */}
-        <CardMusic/>
+        <div className={styles.playlistScreen__content}>
+          {/* {NOMUSIC} */}        
+          <CardMusic/>
+          <CardMusic/>
+          <CardMusic/>
+          <CardMusic/>
+        </div>
+
       </div>
     );
   }
