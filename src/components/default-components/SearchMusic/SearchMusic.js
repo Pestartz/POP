@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styles from "./SearchMusic.scss";
+
 class SearchMusic extends Component {
   constructor(props) {
     super(props);
@@ -11,21 +12,16 @@ class SearchMusic extends Component {
 
   render() {
     return (
-        <div className={styles.searchMusic}>
-          {/* <label for="inp" className={styles.inp}>
-            <input type="text" id="inp" placeholder="&nbsp;"/>
-            <span className={styles.label}>Label</span>
-            <span className={styles.border}></span>
-          </label> */}
-        </div>
+      <div className={styles.searchMusic}>
+        <input 
+          id={styles.searchMusic__input} 
+          type="text" 
+          placeholder="Search..."
+          onChange={this.handleInputChange}
+        />  
+      </div>
     );
   }
 }
 
 export default SearchMusic;   
- {/* <input 
-            type="text" 
-            id="filter" 
-            placeholder="Search for..." 
-            onChange={this.handleInputChange}
-          /> */}

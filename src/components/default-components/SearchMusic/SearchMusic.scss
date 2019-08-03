@@ -1,20 +1,19 @@
 .searchMusic{
   width: 100%;
-  display: flex;
 }
 
-// #filter{
-//   font-size: 1em;
-//   max-width: 444px;
-//   width: 100%;
-//   height: 30px;
-//   border: 0px;
-//   border-bottom: 0.5px solid #C1BFC4;
-//   outline: 0px;
-// }
+#searchMusic__input{
+  font-size: 1em;
+  width: 500px;
+  max-width: 800px;
+  width: 100%;
+  height: 30px;
+  border: 0px;
+  border-bottom: 1px solid #C1BFC4;
+  outline: 0px;
+}
 
-// #filter:focus{
-//   border-bottom-color:rgb(89, 91, 210);
-// }
-
+#searchMusic__input:focus{
+  border-bottom-color:#4642BF;
+}
 
