@@ -12,9 +12,13 @@ class PlaylistScreen extends Component {
     const NOMUSIC="Empty";
     return (
       <div className={styles.playlistScreen}>   
-        <SearchMusic/>
-        <div className={styles.playlistScreen__content}>
-          {/* {NOMUSIC} */}        
+        
+        <div className={styles.playlistScreen__content__search}>
+          {/* {NOMUSIC} */}
+          <SearchMusic/>        
+          
+        </div>
+        <div className={styles.playlistScreen__content__result}>
           <CardMusic/>
           <CardMusic/>
           <CardMusic/>

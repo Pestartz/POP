@@ -5,14 +5,23 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  overflow: hidden;
+  align-content: center;
 }
 
-.playlistScreen__content{
+.playlistScreen__content__search{
+  margin-top: 4%;
   color:grey;
   width: 100%;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-content: center;
+  align-items: center;
+}
+
+.playlistScreen__content__result{
+  margin-top: 4%;
+  color:grey;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -6,15 +6,26 @@ class CardMusic extends Component {
     super(props);
   }
 
+  clickToAdd(){
+    
+  }
+
   render() {
+    let textName="Sakura";
+    let textAuthor="AC/DC";
+    let textTime="3:12";
+    let addIcon = require("assets/images/add.svg");
     return (
       <div className={styles.cardMusic}>
         <div className={styles.cardMusic__pic}></div>
         <div className={styles.cardMusic__text}>
-          <div className={styles.cardMusic__text__name}>Sakura</div>
-          <div className={styles.cardMusic__text__author}>Lokddddd</div>
+          <div className={styles.cardMusic__text__name}>{textName}</div>
+          <div className={styles.cardMusic__text__author}>{textAuthor}</div>
         </div>
-        <div className={styles.cardMusic__time}>3:12</div>
+        <div className={styles.cardMusic__time}>{textTime}</div>
+        <div className={styles.cardMusic__add}>
+          <img src={addIcon} height="14px" width="14px"/>  
+        </div>
       </div>
     );
   }
