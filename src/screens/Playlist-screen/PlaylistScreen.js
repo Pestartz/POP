@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import SearchMusic from "../../components/default-components/SearchMusic/SearchMusic";
-import CardMusic from "../../components/default-components/CardMusic/CardMusic";
+import SearchMusic from "../../default-components/SearchMusic/SearchMusic";
+import CardMusic from "../../default-components/CardMusic/CardMusic";
 import styles from "./PlaylistScreen.scss";
 
 class PlaylistScreen extends Component {

@@ -24,7 +24,7 @@ class CardMusic extends Component {
         </div>
         <div className={styles.cardMusic__time}>{textTime}</div>
         <div className={styles.cardMusic__add}>
-          <img src={addIcon} height="14px" width="14px"/>  
+          <img src={addIcon} height="10px" width="10px"/>  
         </div>
       </div>
     );
