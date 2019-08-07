@@ -11,9 +11,9 @@ class CardMusic extends Component {
   }
 
   render() {
-    let textName="Sakura";
-    let textAuthor="AC/DC";
-    let textTime="3:12";
+    let textName=this.props.name;
+    let textAuthor=this.props.author;
+    let textTime=this.props.time;
     let addIcon = require("assets/images/add.svg");
     return (
       <div className={styles.cardMusic}>

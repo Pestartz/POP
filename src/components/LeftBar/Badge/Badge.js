@@ -7,7 +7,6 @@ class Badge extends Component {
   }
 
   render() {
-    const d='http://wallpapersfan.ru/wp-content/uploads/2016/11/besplatnye-oboi-hd-zheleznyj-chelovek-760x475.jpg';
     return (
       <div className={styles.badge}>
         <div className={styles.badge__image}  alt="" />
