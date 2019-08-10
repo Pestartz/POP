@@ -11,30 +11,30 @@ const initialState = {
 
 export default function player(state = initialState , action = {}){
   switch( action.type ){
-    case 'PLAY_MUSIC':
+    case "PLAY_MUSIC":
       return Object.assign({}, state, {
         playing: true
       })
 
-    case 'PAUSE_MUSIC':
+    case "PAUSE_MUSIC":
       return Object.assign({}, state, {
         playing: false
       })
 
-    case 'NEXT_MUSIC':
+    case "NEXT_MUSIC":
       return Object.assign({}, state, {
         playing: true,
         nowPlayIndex:state.tracks.length-2 < state.nowPlayIndex ? state.nowPlayIndex : state.nowPlayIndex + 1
       })
 
-    case 'PREV_MUSIC':
+    case "PREV_MUSIC":
       return Object.assign({}, state, {
         duration:0,
         position:0,
         nowPlayIndex:state.nowPlayIndex < 1 ? state.nowPlayIndex : state.nowPlayIndex - 1
       })
 
-    case 'SET_MUSIC':
+    case "SET_MUSIC":
       return Object.assign({}, state, {
         playing: true,
         nowPlayIndex: action.nowPlayIndex,
@@ -43,12 +43,12 @@ export default function player(state = initialState , action = {}){
         position:0
       })
 
-    case 'SET_DURATION':
+    case "SET_DURATION":
       return Object.assign({}, state, {
         duration: action.duration
       })
 
-    case 'CHANGE_POSITION':
+    case "CHANGE_POSITION":
       return Object.assign({}, state, {
         position: action.position
       })
