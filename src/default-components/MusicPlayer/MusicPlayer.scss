@@ -1,10 +1,13 @@
 .musicPlayer{
   width: 100%;
-  height: 70px;
+  height: 80px;
   display: flex;
   flex-direction: row;
-  // position: absolute;
-  // bottom: 0;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.671);
+  
 }
 
 .musicPlayer__btns{
@@ -14,6 +17,7 @@
   display: flex;
   flex-direction: row;
   text-align: center;
+  align-items: center;
 }
 
 .musicPlayer__btns__prev{
@@ -28,8 +32,16 @@
 }
 
 .musicPlayer__btns__main{
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
+}
+
+.musicPlayer__btns__main__pic:hover{
+  #svg{  
+  path{ 
+        fill: #595BD2;
+    }
+  }
 }
 
 .musicPlayer__pic{
@@ -62,7 +74,10 @@
 }
 
 .musicPlayer__volume{
-  width: 0%;
+  width: 300px;
+  margin-left: 20px; 
+  background: rgba(128, 128, 128, 0.185);
+  cursor: pointer;
 }
 
 .musicPlayer__card{

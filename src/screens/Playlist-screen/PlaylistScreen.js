@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SearchMusic from "../../default-components/SearchMusic/SearchMusic";
-import CardMusic from "../../default-components/CardMusic/CardMusic";
 import MusicPlayer from "../../default-components/MusicPlayer/MusicPlayer";
 import styles from "./PlaylistScreen.scss";
 
@@ -28,21 +27,40 @@ const TASKS = [
 class PlaylistScreen extends Component {
   constructor(props) {
     super(props);
+
+   
   }
 
 
-  
 
   render() {
+    var songs = [
+      {
+        url: 'path/to/mp3',
+        cover: 'path/to/jpeg',
+        artist: {
+          name: 'Metallica',
+          song: 'Fuel'
+        }
+      },
+      {
+        url: 'path/to/your/mp3',
+        artist: {
+          name: 'X Japan',
+          song: 'Art of Life'
+        }
+      }
+    ];
+
     return (
       <div className={styles.playlistScreen}>
 
         {/* <div className={styles.playlistScreen__content__search}>
           <SearchMusic/>        
           
-        </div> */}
+        </div>
 
-        {/* <div className={styles.playlistScreen__content__result}>
+        <div className={styles.playlistScreen__content__result}>
           {(TASKS.map(({id,text1,text2,time})=>
             <CardMusic
               key={id}
@@ -53,7 +71,7 @@ class PlaylistScreen extends Component {
           ))}
         </div> */}
 
-        {/* <MusicPlayer/> */}
+        
 
       </div>
     );
