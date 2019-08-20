@@ -25,6 +25,46 @@ class MusicPlayer extends Component {
     this.plady = this.plady.bind(this);
   } 
 
+
+  componentDidMount() {
+    this.btnRef.addEventListener("timeupdate", () => {
+      let ratio = this.btnRef.currentTime / this.btnRef.duration;
+      let position = this.timeline.offsetWidth * ratio;
+      this.positionHandle(position);
+    });
+  }
+
+  positionHandle = (position) => {
+    let timelineWidth = this.timeline.offsetWidth - this.handle.offsetWidth;
+    let handleLeft = position - this.timeline.offsetLeft;
+    if (handleLeft >= 0 && handleLeft <= timelineWidth) {
+      this.handle.style.marginLeft = handleLeft + "px";
+    }
+    if (handleLeft < 0) {
+      this.handle.style.marginLeft = "0px";
+    }
+    if (handleLeft > timelineWidth) {
+      this.handle.style.marginLeft = timelineWidth + "px";
+    }
+  };
+
+  mouseMove = (e) => {
+    this.positionHandle(e.pageX);
+    // eslint-disable-next-line no-extra-parens
+    this.btnRef.currentTime = (e.pageX / this.timeline.offsetWidth) * this.btnRef.duration;
+  };
+
+  mouseUp = () => {
+    window.removeEventListener('mousemove', this.mouseMove);
+    window.removeEventListener('mouseup', this.mouseUp);
+  };
+
+  mouseDown = () => {
+    window.addEventListener('mousemove', this.mouseMove);
+    window.addEventListener('mouseup', this.mouseUp);
+  };
+
+
   plady(){
     if (this.state.play) {
       this.setState({ play: false });
@@ -67,8 +107,8 @@ class MusicPlayer extends Component {
           <div className={styles.musicPlayer__btns__next}> <img src={btnNextPrev}/> </div>  
         </div> 
 
-        <div className={styles.musicPlayer__volume}>
-          <div style={{ height: "3px" , width: 54 + "%" , background: "#4642BF"}}></div>
+        <div className={styles.musicPlayer__volume} onClick={this.mouseMove} ref={(timeline) => { this.timeline = timeline }}>
+          <div className={styles.musicPlayer__volume__handle}  onMouseDown={this.mouseDown} ref={(handle) => { this.handle = handle }}></div>
         </div>
    
         <audio src={"https://r.mradx.net/r/kFYyZFlTGb6IEbXVjgY_N8JdEA0HqxEo.mp3"} ref={this.btnRef}></audio>

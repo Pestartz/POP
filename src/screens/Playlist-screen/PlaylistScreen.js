@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SearchMusic from "../../default-components/SearchMusic/SearchMusic";
-import MusicPlayer from "../../default-components/MusicPlayer/MusicPlayer";
+import CardMusic from "../../default-components/CardMusic/CardMusic";
 import styles from "./PlaylistScreen.scss";
 
 const TASKS = [
@@ -22,6 +22,28 @@ const TASKS = [
         text2: "AC/DC",
         time: "3:23"
       }
+      ,
+      {
+        id: 4,
+        text1: "Bingo",
+        text2: "AC/DC",
+        time: "3:23"
+      }
+      ,
+      {
+        id: 4,
+        text1: "Bingo",
+        text2: "AC/DC",
+        time: "3:23"
+      }
+      ,
+      {
+        id: 4,
+        text1: "Bingo",
+        text2: "AC/DC",
+        time: "3:23"
+      }
+    
     ];
 
 class PlaylistScreen extends Component {
@@ -34,28 +56,14 @@ class PlaylistScreen extends Component {
 
 
   render() {
-    var songs = [
-      {
-        url: 'path/to/mp3',
-        cover: 'path/to/jpeg',
-        artist: {
-          name: 'Metallica',
-          song: 'Fuel'
-        }
-      },
-      {
-        url: 'path/to/your/mp3',
-        artist: {
-          name: 'X Japan',
-          song: 'Art of Life'
-        }
-      }
-    ];
+   
+     
+  
 
     return (
       <div className={styles.playlistScreen}>
 
-        {/* <div className={styles.playlistScreen__content__search}>
+        <div className={styles.playlistScreen__content__search}>
           <SearchMusic/>        
           
         </div>
@@ -69,7 +77,7 @@ class PlaylistScreen extends Component {
               time={time}
             />
           ))}
-        </div> */}
+        </div>
 
         
 

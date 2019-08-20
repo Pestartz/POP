@@ -16,9 +16,8 @@ class Home extends Component {
           <LeftBar/>
           <PlaylistScreen/>
         </div>
-        <div className={styles.home__player}>
-          
-        </div>
+        
+        <div className={styles.home__player}/> 
         <MusicPlayer/>
       </div>
     );

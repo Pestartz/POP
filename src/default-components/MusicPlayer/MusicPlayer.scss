@@ -7,7 +7,7 @@
   bottom: 0;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.671);
-  
+  z-index: 2;
 }
 
 .musicPlayer__btns{
@@ -50,7 +50,7 @@
   width: 40px;
   background-color: rgba(128, 128, 128, 0.185);
   border-radius: 10%;
-  margin-left: 3%; 
+  margin-left: 6%; 
 }
 
 .musicPlayer__text{
@@ -73,17 +73,29 @@
   font-family: sans-serif;
 }
 
-.musicPlayer__volume{
-  width: 300px;
-  margin-left: 20px; 
-  background: rgba(128, 128, 128, 0.185);
-  cursor: pointer;
-}
-
 .musicPlayer__card{
   min-width: 200px;
   max-width: 300px;
   display: flex;
   flex-direction: row;
   width: 100%;
+}
+
+.musicPlayer__volume{
+  width: 300px;
+  margin-left: 20px; 
+  background: rgba(128, 128, 128, 0.185);
+  cursor: pointer;
+  border-radius: 6%;
+  height: 3px;
+  
+  
+}
+
+.musicPlayer__volume__handle{
+  z-index: 1;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #595BD2;
 }

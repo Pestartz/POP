@@ -19,9 +19,11 @@
 
 .playlistScreen__content__result{
   margin-top: 4%;
+  height: 100%;
   color:grey;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
