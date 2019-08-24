@@ -1,15 +1,10 @@
 import React, { Component } from "react";
+import NextBtn from "./NextBtn/NextBtn";
+import PlayPause from "./PlayPause/PlayPause";
+import Mute from "./Mute/Mute";
 import styles from "./MusicPlayer.scss";
-// this.state = {
-    //   loaded: false,
-    //   duration: 0,
-    //   current: 0,
-    //   play: false,
-    //   error: false,
-    //   name: "",
-    //   author: "",
-    //   source: "",
-    // };
+
+
 class MusicPlayer extends Component {
   constructor(props) {
     super(props);
@@ -18,40 +13,55 @@ class MusicPlayer extends Component {
       loaded: false,
       duration: 0,
       current: 0,
+      progress: 0,
       play: false,
-
+      mute: false,
+      text: "Highway to Hell",
+      author: "AC/DC",
+      source: "http://claymore.france.free.fr/momo/summer%20love.mp3",
     };
+ 
     this.btnRef = React.createRef();
-    this.plady = this.plady.bind(this);
+    this.playPause = this.playPause.bind(this);
+    this.mute = this.mute.bind(this);
   } 
 
-
   componentDidMount() {
-    this.btnRef.addEventListener("timeupdate", () => {
-      let ratio = this.btnRef.currentTime / this.btnRef.duration;
+    this.btnRef.current.addEventListener("timeupdate", () => {
+      let duration =this.btnRef.current.duration;
+      let currentTime = this.btnRef.current.currentTime;
+  
+      let ratio = currentTime / duration;
       let position = this.timeline.offsetWidth * ratio;
+
+      this.setState({ progress: currentTime, duration: duration });
       this.positionHandle(position);
     });
   }
 
   positionHandle = (position) => {
-    let timelineWidth = this.timeline.offsetWidth - this.handle.offsetWidth;
-    let handleLeft = position - this.timeline.offsetLeft;
-    if (handleLeft >= 0 && handleLeft <= timelineWidth) {
-      this.handle.style.marginLeft = handleLeft + "px";
-    }
-    if (handleLeft < 0) {
+    this.handle.style.width = position + "px";
+    if (position < 0) {
       this.handle.style.marginLeft = "0px";
-    }
-    if (handleLeft > timelineWidth) {
-      this.handle.style.marginLeft = timelineWidth + "px";
     }
   };
 
+  formatTime = (duration) => {
+    const minutes = Math.floor(duration / 60);
+    const seconds = Math.round(duration % 60);
+    return minutes + ":" + (seconds > 9 ? seconds : "0" + seconds);
+  }
+
   mouseMove = (e) => {
-    this.positionHandle(e.pageX);
-    // eslint-disable-next-line no-extra-parens
-    this.btnRef.currentTime = (e.pageX / this.timeline.offsetWidth) * this.btnRef.duration;
+    let width = this.timeline.offsetWidth;
+    let rect = this.timeline.getBoundingClientRect();
+    let offsetX = e.clientX - rect.left;
+    let duration = this.btnRef.current.duration;
+    let currentTime = duration * offsetX / width;
+
+    this.btnRef.current.currentTime = currentTime;
+    this.setState({ progress: currentTime });
+  
   };
 
   mouseUp = () => {
@@ -64,8 +74,17 @@ class MusicPlayer extends Component {
     window.addEventListener('mouseup', this.mouseUp);
   };
 
-
-  plady(){
+  mute = () => {
+    if(this.state.mute === true) {
+      this.setState({ mute: false })
+      this.btnRef.current.volume = 1;
+    } else {
+      this.setState({ mute: true })
+      this.btnRef.current.volume = 0;
+    }
+  }
+  
+  playPause = () => {
     if (this.state.play) {
       this.setState({ play: false });
       this.btnRef.current.pause();
@@ -76,42 +95,39 @@ class MusicPlayer extends Component {
   }
 
   render() {
-    const { play } = this.state;
-
-    const author="AC/DC";
-    const name="Highway to Hell";
-    const btnNextPrev = require("assets/images/next.svg");
-    let btnMain;
-    
-    if(play===false){
-      btnMain = require("assets/images/start.svg");
-    }else{
-      btnMain = require("assets/images/pause-bars.svg");
-    }
+    const { author, text, source } = this.state;
     
     return (
       <div className={styles.musicPlayer}>
         <div className={styles.musicPlayer__card}>
           <div className={styles.musicPlayer__pic}></div>
             <div className={styles.musicPlayer__text}>
-              <div className={styles.musicPlayer__text__name}>{name}</div>
+              <div className={styles.musicPlayer__text__name}>{text}</div>
               <div className={styles.musicPlayer__text__author}>{author}</div>
             </div>
         </div>
 
         <div className={styles.musicPlayer__btns}> 
-          <div className={styles.musicPlayer__btns__prev}> <img src={btnNextPrev}/> </div>
-          <div className={styles.musicPlayer__btns__main} onClick={this.plady}  > 
-            <img className={styles.musicPlayer__btns__main__pic} height="35px" width="35px" src={btnMain}/> 
+          <div className={styles.musicPlayer__btns__prev}> <NextBtn/> </div>
+          <div className={styles.musicPlayer__btns__main} onClick={this.playPause}  > 
+            <PlayPause  play={this.state.play}/>
           </div>
-          <div className={styles.musicPlayer__btns__next}> <img src={btnNextPrev}/> </div>  
+          <div className={styles.musicPlayer__btns__next}> <NextBtn/> </div>  
         </div> 
 
-        <div className={styles.musicPlayer__volume} onClick={this.mouseMove} ref={(timeline) => { this.timeline = timeline }}>
-          <div className={styles.musicPlayer__volume__handle}  onMouseDown={this.mouseDown} ref={(handle) => { this.handle = handle }}></div>
+        <div className={styles.musicPlayer__duration} onClick={this.mouseMove} ref={(timeline) => { this.timeline = timeline }}>
+          <div className={styles.musicPlayer__duration__handle} onMouseDown={this.mouseDown} ref={(handle) => { this.handle = handle }}></div>
         </div>
-   
-        <audio src={"https://r.mradx.net/r/kFYyZFlTGb6IEbXVjgY_N8JdEA0HqxEo.mp3"} ref={this.btnRef}></audio>
+
+        <div className={styles.musicPlayer__time}>
+          {this.formatTime(this.state.progress) + "/" + this.formatTime(this.state.duration)}
+        </div>
+
+        <div className={styles.musicPlayer__volume} onClick={this.mute}>
+          <Mute mute={this.state.mute}/>
+        </div>
+
+        <audio src={"http://claymore.france.free.fr/momo/summer%20love.mp3"} ref={this.btnRef}></audio>
 
       </div>
     );
