@@ -1,25 +1,3 @@
-// const express = require("express");
-// const app = express();
- 
-// // обработка запроса по адресу /about
-// app.get("/about", function(request, response){
-     
-//     response.send("<h1>О сайте</h1>");
-// });
- 
-// // обработка запроса по адресу /contact
-// app.use("/contact", function(request, response){
-     
-//     response.send("<h1>Контакты</h1>");
-// });
- 
-// // обработка запроса к корню веб-сайта
-// app.get("/", function(request, response){
-     
-//     response.send("<h1>Главная авав</h1>");ы
-// });
-// app.listen(3000);
-
 
 const express = require('express');
 const trackRoute = express.Router();
@@ -29,20 +7,13 @@ const mongodb = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
 
-/**
- * NodeJS Module dependencies.
- */
+
 const { Readable } = require('stream');
 
-/**
- * Create Express server && Express Router configuration.
- */
 const app = express();
 app.use('/tracks', trackRoute);
 
-/**
- * Connect Mongo Driver to MongoDB.
- */
+
 let db;
 MongoClient.connect('mongodb://localhost/trackDB', (err, database) => {
   if (err) {
@@ -52,9 +23,7 @@ MongoClient.connect('mongodb://localhost/trackDB', (err, database) => {
   db = database;
 });
 
-/**
- * GET /tracks/:trackID
- */
+
 trackRoute.get('/:trackID', (req, res) => {
   try {
     var trackID = new ObjectID(req.params.trackID);
@@ -83,9 +52,7 @@ trackRoute.get('/:trackID', (req, res) => {
   });
 });
 
-/**
- * POST /tracks
- */
+
 trackRoute.post('/', (req, res) => {
   const storage = multer.memoryStorage()
   const upload = multer({ storage: storage, limits: { fields: 1, fileSize: 6000000, files: 1, parts: 2 }});
@@ -98,7 +65,7 @@ trackRoute.post('/', (req, res) => {
     
     let trackName = req.body.name;
     
-    // Covert buffer to Readable Stream
+    
     const readableTrackStream = new Readable();
     readableTrackStream.push(req.file.buffer);
     readableTrackStream.push(null);
