@@ -3,6 +3,7 @@ import React from "react";
 
 const PlayPause = (props) => {
   return(
+    // eslint-disable-next-line react/prop-types
     props.play? 
     <svg version="1.1" id="Capa_1" width="35px" height="35px" viewBox="0 0 353.562 353.562" >
 			<path d="M41.064,353.562h87.014V0H41.064V353.562z" fill= "rgba(128, 128, 128, 0.4)"/>

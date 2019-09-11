@@ -1,12 +1,10 @@
-import { combineReducers } from "redux";
 
 const initialState = {
   playing: false,
-  duration:0,
-  position:0,
-  tracks: [],
-  message: null,
-  nowPlayIndex: 0
+  duration: 0,
+  position: 0,
+  nowPlayIndex: 0,
+  tracks: {}
 };
 
 export default function player(state = initialState , action = {}){
@@ -29,8 +27,8 @@ export default function player(state = initialState , action = {}){
 
     case "PREV_MUSIC":
       return Object.assign({}, state, {
-        duration:0,
-        position:0,
+        duration: 0,
+        position: 0,
         nowPlayIndex:state.nowPlayIndex < 1 ? state.nowPlayIndex : state.nowPlayIndex - 1
       })
 
@@ -39,8 +37,8 @@ export default function player(state = initialState , action = {}){
         playing: true,
         nowPlayIndex: action.nowPlayIndex,
         tracks: action.tracks,
-        duration:0,
-        position:0
+        duration: 0,
+        position: 0
       })
 
     case "SET_DURATION":
@@ -57,7 +55,3 @@ export default function player(state = initialState , action = {}){
       return state
   }
 }
-
-const rootReducer = combineReducers({ player });
-
-export default rootReducer;

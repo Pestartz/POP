@@ -1,5 +1,5 @@
-import { createStore, compose } from 'redux';
-import rootReducer from './reducers/reducer';
+import { createStore } from 'redux';
+import rootReducer from './reducers/combineReducers';
 
 let store = createStore(rootReducer);
 

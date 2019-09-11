@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-decoration: none;
 }
 
 .playlist:hover{
@@ -18,6 +19,7 @@
   flex-direction: row;
   align-items: center;
   padding-left: 12%;
+  cursor: pointer;
 }
 
 .playlist__wrapper:hover{
@@ -32,5 +34,4 @@
 .playlist__text{
   padding-left:8px;
   font-family: sans-serif;
-  
 }

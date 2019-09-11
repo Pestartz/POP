@@ -6,9 +6,22 @@
   position: absolute;
   bottom: 0;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.89);
+  background-color: rgba(255, 255, 255, 0.80);
   z-index: 1;
+  overflow: hidden;
 }
+
+
+// .musicPlayer:before{
+//   content: '""';
+//   width: 100%;
+//   height: 80px;
+//   background: inherit; 
+//   position: absolute; 
+//   bottom: 0;
+//   box-shadow: inset 34 34 34 200px rgba(255,255,255,0.3);
+//   filter: blur(10px);
+// }
 
 .musicPlayer__btns{
   height: 70px;
@@ -30,7 +43,7 @@
   path{ 
     fill: #595BD2;
   }
-}
+} 
 
 .musicPlayer__btns__prev:hover{
   path{ 
@@ -50,8 +63,8 @@
 }
 
 .musicPlayer__btns__main{
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
 }
 
 .musicPlayer__pic{

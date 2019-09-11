@@ -10,18 +10,17 @@ class Home extends Component {
   }
 
   render() {
+    // eslint-disable-next-line react/prop-types
+    const content = this.props.children;
     return (
       <div className={styles.home}>
-        <div className={styles.home__content}>
-          <LeftBar/>
-          <PlaylistScreen/>
-        </div>
-        
-        <div className={styles.home__player}/> 
+        <LeftBar/>
         <MusicPlayer/>
+        {content}
       </div>
     );
   }
 }
 
 export default Home;
+    {/* <PlaylistScreen/> */}

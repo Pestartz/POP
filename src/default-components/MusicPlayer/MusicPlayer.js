@@ -10,8 +10,8 @@ class MusicPlayer extends Component {
     super(props);
 
     this.state = {
-      loaded: false,
       duration: 0,
+      index: -1,
       current: 0,
       progress: 0,
       play: false,
@@ -115,7 +115,7 @@ class MusicPlayer extends Component {
           <div className={styles.musicPlayer__btns__next}> <NextBtn/> </div>  
         </div> 
 
-        <div className={styles.musicPlayer__duration} onClick={this.mouseMove} ref={(timeline) => { this.timeline = timeline }}>
+        <div className={styles.musicPlayer__duration} onClick={this.mouseMove} ref = {(timeline) => { this.timeline = timeline }}>
           <div className={styles.musicPlayer__duration__handle} onMouseDown={this.mouseDown} ref={(handle) => { this.handle = handle }}></div>
         </div>
 
@@ -127,7 +127,7 @@ class MusicPlayer extends Component {
           <Mute mute={this.state.mute}/>
         </div>
 
-        <audio src={"http://claymore.france.free.fr/momo/summer%20love.mp3"} ref={this.btnRef}></audio>
+        <audio src={source} ref={this.btnRef}></audio>
 
       </div>
     );

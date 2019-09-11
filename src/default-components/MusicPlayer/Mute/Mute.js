@@ -2,6 +2,7 @@ import React from "react";
 
 const Mute = (props) => {
   let color;
+  // eslint-disable-next-line react/prop-types
   !props.mute? color="#595BD2":color="#595BD2"
 
   return(

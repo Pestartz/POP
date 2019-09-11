@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchMusic from "../../default-components/SearchMusic/SearchMusic";
 import CardMusic from "../../default-components/CardMusic/CardMusic";
+// import { connect } from "react-redux";
 import styles from "./PlaylistScreen.scss";
 
 const TASKS = [
@@ -24,21 +25,21 @@ const TASKS = [
       }
       ,
       {
-        id: 4,
+        id: 45,
         text1: "Bingo",
         text2: "AC/DC",
         time: "3:23"
       }
       ,
       {
-        id: 4,
+        id: 32,
         text1: "Bingo",
         text2: "AC/DC",
         time: "3:23"
       }
       ,
       {
-        id: 4,
+        id: 5,
         text1: "Bingo",
         text2: "AC/DC",
         time: "3:23"
@@ -49,16 +50,11 @@ const TASKS = [
 class PlaylistScreen extends Component {
   constructor(props) {
     super(props);
-
-   
   }
 
-
-
   render() {
-   
-     
-  
+
+
 
     return (
       <div className={styles.playlistScreen}>
@@ -87,3 +83,7 @@ class PlaylistScreen extends Component {
 }
 
 export default PlaylistScreen;
+// export default connect(({ tasks, filters }) => ({
+//   tasks,
+//   filters,
+// }), { addTast, removeTask, completeTask, changeFilter })(PlaylistScreen);
