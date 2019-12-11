@@ -4,7 +4,7 @@ release/
 
 # Development folders and files #
 #################################
-server/pass.txt
+
 .tmp/
 dist/
 node_modules/
@@ -26,7 +26,7 @@ logs/
 *.log
 npm-debug.log*
 .npm
-
+*.txt
 # Packages #
 ############
 # it's better to unpack these files and commit the raw source
