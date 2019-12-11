@@ -1,0 +1,38 @@
+.admin{
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  height: 180px;
+  width: 350px;
+  justify-content: space-between;
+}
+
+#admin__input{
+  font-size: 1em;
+  width: 350px;
+  width: 100%;
+  height: 30px;
+  border: 0px;
+  border-bottom: 2px solid #C1BFC4;
+  outline: 0px;
+}
+
+#admin__input:focus{
+  border-bottom-color:#4642BF;
+}
+
+#admin__sumbit{
+  color: #ffffff;
+  height: 30px;
+  width: 350px;
+  font-size: 1em;
+  background-color: #4642BF;
+  border: 2px solid #4642BF;
+}
+
+#admin__upload{
+  width: 350px;
+  background-color: #4642BF;
+  border: 2px solid #4642BF;
+  color: white;
+}

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Home.scss";
 import LeftBar from "../../components/LeftBar/LeftBar";
-import PlaylistScreen from "../Playlist-screen/PlaylistScreen";
 import MusicPlayer from "../../default-components/MusicPlayer/MusicPlayer";
 
 class Home extends Component {
@@ -23,4 +22,3 @@ class Home extends Component {
 }
 
 export default Home;
-    {/* <PlaylistScreen/> */}

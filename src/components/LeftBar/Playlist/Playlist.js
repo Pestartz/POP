@@ -8,7 +8,7 @@ class Playlist extends Component {
 
   render() {
     let text = "Playlists";
-    let playlistsIcon = require("assets/images/pb.svg");
+    let playlistsIcon = require("assets/images/Playlist.svg");
     return (
       <div className={styles.playlist__wrapper}>
         <div className={styles.playlist}>

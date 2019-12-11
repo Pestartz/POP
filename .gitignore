@@ -4,6 +4,7 @@ release/
 
 # Development folders and files #
 #################################
+.txt
 .tmp/
 dist/
 node_modules/

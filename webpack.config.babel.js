@@ -3,8 +3,6 @@ import path from "path";
 import webpack from "webpack";
 import merge from "webpack-merge";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import postcssPresetEnv from "postcss-preset-env";
-import AntdScssThemePlugin from "antd-scss-theme-plugin";
 import BabiliPlugin from "babili-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 import UglifyJsPlugin from "uglifyjs-webpack-plugin";
@@ -40,29 +38,12 @@ const cssLoader = {
   }
 };
 
-const postCssLoader = {
-  loader: "postcss-loader",
-  options: {
-    ident: "postcss",
-    sourceMap: isDev,
-    plugins: () => [postcssPresetEnv()]
-  }
-};
-
 const sassLoader = {
   loader: "sass-loader",
   options: {
     sourceMap: isDev
   }
 };
-
-const lessLoader = AntdScssThemePlugin.themify({
-  loader: "less-loader",
-  options: {
-    sourceMap: isDev,
-    javascriptEnabled: true
-  }
-});
 
 const sassHotLoader = {
   loader: "css-hot-loader"
@@ -116,7 +97,6 @@ const config = {
             sassHotLoader,
             MiniCssExtractPlugin.loader,
             cssLoader,
-            postCssLoader,
             sassLoader
           ]
         },
@@ -127,7 +107,6 @@ const config = {
             sassHotModuleLoader,
             MiniCssExtractPlugin.loader,
             cssModuleLoader,
-            postCssLoader,
             sassLoader
           ]
         },
@@ -137,7 +116,6 @@ const config = {
             sassHotLoader,
             MiniCssExtractPlugin.loader,
             cssLoader,
-            lessLoader
           ]
         }
       ]
@@ -146,9 +124,6 @@ const config = {
       new webpack.DefinePlugin({
         NODE_ENV: process.env.NODE_ENV
       }),
-      new AntdScssThemePlugin(
-        path.join(__dirname, "src", "themes/Ant.vars.scss")
-      ),
       new MiniCssExtractPlugin({
         filename: isDev ? "[name].css" : "[name].[chunkhash].css",
         chunkFilename: isDev ? "[id].css" : "[name].[chunkhash].css",
@@ -186,6 +161,7 @@ const config = {
         disableDotRule: false
       },
       headers: { "Access-Control-Allow-Origin": "*" },
+      // eslint-disable-next-line no-dupe-keys
       stats: {
         colors: true,
         chunks: false,
@@ -197,7 +173,7 @@ const config = {
           env: process.env,
           stdio: "inherit"
         })
-          .on("close", code => process.exit(0))
+          .on("close", () => process.exit(0))
           .on("error", spawnError => console.error(spawnError));
       }
     },

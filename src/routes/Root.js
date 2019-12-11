@@ -2,10 +2,10 @@
 import React from "react";
 import { Provider } from "react-redux";
 import Home from "../screens/Home/Home";
-import Search from "../screens/Playlist-screen/PlaylistScreen";
-import te from "../screens/Search/Search";
-import Charts from "../screens/Charts/ChartScreen";
-import {MemoryRouter , Route, Switch} from 'react-router-dom'
+import Playlist from "../screens/Playlist/Playlist";
+import Search from "../screens/Search/Search";
+import Charts from "../screens/Charts/Charts";
+import {MemoryRouter, Route, Switch} from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Routes = ({store}) => (
@@ -13,10 +13,10 @@ const Routes = ({store}) => (
     <MemoryRouter>
       <Home>
         <Switch>
-          <Route exact path="/search" component={Search} />
-          <Route path="/playlist" component={te} />
+          <Route exact path="/" component={Search} />
+          <Route path="/playlist" component={Playlist} />
           <Route path="/charts" component={Charts} />
-       </Switch>
+       </Switch> 
       </Home>
     </MemoryRouter>
   </Provider>

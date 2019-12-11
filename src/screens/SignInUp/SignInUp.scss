@@ -1,0 +1,42 @@
+.signInUp{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 100vh;
+  margin: auto;
+  justify-content: center;
+}
+
+input[type=mail], input[type=password] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 0px;
+  border-bottom: 1px solid #C1BFC4;
+  outline: 0px;
+}
+
+input:focus{
+  border-bottom-color:#595BD2;
+}
+
+.signInUp__btns{
+  display: flex;
+  flex-direction: row;
+  // margin: auto;
+  height: 30px;
+}
+
+input[type=submit]{
+  border: 1px solid #3f333300;
+  border-radius: 3px; 
+  background: rgba(9, 10, 87, 0) !important; 
+  outline: none; 
+  height: 30px; 
+  width: 200px; 
+  cursor: pointer;
+  color: #595BD2; 
+  font-size: 16px; 
+  text-align: center;
+}

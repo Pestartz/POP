@@ -8,7 +8,7 @@ class Chart extends Component {
 
   render() {
     let text = "Charts";
-    let chartIcon = require("assets/images/g.svg");
+    let chartIcon = require("assets/images/Chart.svg");
     return (
       <div className={styles.chart__wrapper}>
         <div className={styles.chart}>

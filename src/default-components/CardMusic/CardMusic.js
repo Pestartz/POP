@@ -12,10 +12,10 @@ class CardMusic extends Component {
   }
 
   render() {
-    let textName=this.props.name;
-    let textAuthor=this.props.author;
-    let textTime=this.props.time;
-    let addIcon = require("assets/images/add.svg");
+    const textName=this.props.name;
+    const textAuthor=this.props.author;
+    const textTime=this.props.time;
+    const addIcon = require("assets/images/add.svg");
     return (
       <div className={styles.cardMusic}>
         <div className={styles.cardMusic__pic}></div>

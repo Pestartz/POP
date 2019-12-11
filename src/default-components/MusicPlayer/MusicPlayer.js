@@ -61,7 +61,6 @@ class MusicPlayer extends Component {
 
     this.btnRef.current.currentTime = currentTime;
     this.setState({ progress: currentTime });
-  
   };
 
   mouseUp = () => {
@@ -96,7 +95,6 @@ class MusicPlayer extends Component {
 
   render() {
     const { author, text, source } = this.state;
-    
     return (
       <div className={styles.musicPlayer}>
         <div className={styles.musicPlayer__card}>

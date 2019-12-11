@@ -20,7 +20,7 @@ class LeftBar extends Component {
       <div className={styles.leftbar}>
         <Badge/>
         <div className={styles.leftbar__under}>
-          <Link style={ss} to="/search"><Search/></Link>
+          <Link style={ss} to="/"><Search/></Link>
           <Link style={ss} to="/playlist"><Playlist/></Link>
           <Link style={ss} to="/charts"><Chart/></Link>
         </div>

@@ -1,0 +1,43 @@
+.playlist{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.884);
+}
+
+.playlist__text{
+  min-width: 800px;
+  max-width: 800px;
+  height: 80px;
+  font-size: 32px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 3%;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.playlist__text__right{
+  margin-right: 2.5%;
+  height: 80px;
+}
+
+.playlist__text__left{
+  width: 600px;
+  text-align: left;
+  margin-left: 3%;
+}
+
+.playlist__text__left__top{
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.884);
+}
+
+.playlist__text__left__under{
+  font-size: 18px;
+  font: bold;
+  color:  rgba(128, 128, 128, 0.5);
+}
